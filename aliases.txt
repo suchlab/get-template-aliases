@@ -1,3 +1,3 @@
 codespaces-react=git@github.com:github/gitignore.git=npm install
 package=git@github.com:itaibo/package-template.git=npm install
-react-boilerplate=git@github.com:react-boilerplate/react-boilerplate.git=npm run setup
+coreui-free-react-admin=git@github.com:coreui/coreui-free-react-admin-template.git=npm install
