@@ -1,4 +1,5 @@
 codespaces-react=git@github.com:github/gitignore.git=npm install
 package=git@github.com:get-template/package-template.git=npm install
+package-ts=git@github.com:get-template/package-template.git=npm install
 coreui-free-react-admin=git@github.com:coreui/coreui-free-react-admin-template.git=npm install
 og-image=git@github.com:vercel/og-image.git
