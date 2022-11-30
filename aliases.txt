@@ -1,1 +1,1 @@
-package=git@github.com:itaibo/package-template.git
+package=git@github.com:itaibo/package-template.git=npm install
