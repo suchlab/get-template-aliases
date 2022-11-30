@@ -3,3 +3,4 @@ package=git@github.com:get-template/package-template.git=npm install
 package-ts=git@github.com:get-template/package-template.git=npm install
 coreui-free-react-admin=git@github.com:coreui/coreui-free-react-admin-template.git=npm install
 og-image=git@github.com:vercel/og-image.git
+react-app=git@github.com:get-template/react-app-template.git=npm install
