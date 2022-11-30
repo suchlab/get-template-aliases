@@ -13,6 +13,9 @@ assignees: itaibo
 ### Origin
 `git@github.com:UserName/RepoName.git`
 
+### Post-download commands (optional)
+`npm install`
+
 ---
 
 #### Keep in mind
