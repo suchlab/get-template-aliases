@@ -1,0 +1,27 @@
+{
+  "name": "aliases",
+  "version": "1.0.0",
+  "description": "Aliases to be used in the [get-templates](https://github.com/get-template/get-template) npx tool.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "gtal": "./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/get-template/aliases.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/get-template/aliases/issues"
+  },
+  "homepage": "https://github.com/get-template/aliases#readme",
+  "dependencies": {
+    "inquirer": "^8.2.5",
+    "promisify": "^0.0.3"
+  }
+}
