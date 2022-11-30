@@ -1,2 +1,2 @@
+codespaces-react=git@github.com:github/gitignore.git=npm install
 package=git@github.com:itaibo/package-template.git=npm install
-svelte=git@github.com:sveltejs/svelte.git=npm install
