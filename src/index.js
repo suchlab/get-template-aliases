@@ -87,13 +87,15 @@ async function aliases() {
 
 		console.log('Alias added to list');
 
+		console.log('Uploading to GitHub...');
+
 		try {
 			await exec(`cd ${BASE}; git commit -am "Add ${alias.trim()}"; git push;`);
 		} catch (e) {
 			return error('Could not upload to GitHub');
 		}
 
-		console.log('Alias uploaded to GitHub');
+		console.log('Alias uploaded to GitHub!');
 
 		end();
 	}
