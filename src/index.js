@@ -5,7 +5,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
 
-const ALIASES = path.resolve(__dirname, '../aliases.txt');
+const ALIASES = path.resolve(__dirname, '../aliases.json');
 const BASE = path.resolve(__dirname, '../');
 
 function error(message) {
@@ -48,32 +48,25 @@ async function aliases() {
 			}
 		]);
 
-		const { alias, origin, command} = aliasConfiguration;
+		let { alias, origin, command} = aliasConfiguration;
+		
+		alias = alias.trim();
+		origin = origin.trim();
+		command = command && command.trim();
 
 		if (!alias || !origin) return error('Alias and Origin are mandatory');
 
 		const file = fs.readFileSync(ALIASES, 'utf8');
-		
-		const lines = file.split("\n");
 
-		for (let line of lines) {
-			line = line.trim();
+		const aliases = JSON.parse(file);
 
-			if (!line) continue;
-
-			const [lineAlias] = line.split('=');
-
-			if (lineAlias === alias.trim()) return error('Alias already exists');
-		}
-
-		const newLine = `${alias.trim()}=${origin.trim()}=${command && command.trim()}`;
-		const newFile = file.trim() + "\n" + newLine + "\n";
+		const exists = !!aliases.find(a => a.alias === alias);
+		if (exists) return error('Alias already exists');
 
 		const newAliasObject = {
-			alias: alias.trim(),
-			origin: origin.trim(),
-			command: command && command.trim(),
-			line: newLine,
+			alias,
+			origin,
+			command,
 		};
 
 		const confirmation = await inquirer.prompt([
@@ -86,9 +79,11 @@ async function aliases() {
 
 		if (!confirmation.accept) end();
 
+		aliases.push(newAliasObject);
+
 		fs.unlinkSync(ALIASES);
 
-		fs.writeFileSync(ALIASES, newFile);
+		fs.writeFileSync(ALIASES, JSON.stringify(aliases));
 
 		console.log('Alias added to list');
 
